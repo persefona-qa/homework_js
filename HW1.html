@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prompt Example</title>
+</head>
+<body>
+    <script>
+        // task 1
+        let inputValue = 82;
+let minutes = inputValue % 60;
+let hours = (inputValue - minutes)/ 60;
+let minutesString = "";
+if (minutes < 10) {
+    minutesString = "0" + minutes;
+} else {
+    minutesString = "" + minutes;
+}
+let result = hours + ":" + minutesString;
+console.log (result)
+
+//task 2
+let a = Number(prompt ("please enter first numeric value", ""));
+let b = Number(prompt ("please enter second numeric value", ""));
+
+let sum = a+b;
+let subtraction = a - b;
+if (subtraction < 0)
+{
+subtraction = -subtraction
+}
+let multiplication = a*b;
+let division = b !== 0 ? a/b : "undefined";
+
+ alert (`Sum of a and b = ${sum}\nDifference of a and b = ${subtraction}\nProduct of a and b = ${multiplication}\nQuotient of a and b = ${division}`);
+
+ //task 3
+let x = 1
+let y = 2
+
+let res1 = String(x) + String(y)
+console.log(res1); // "12"
+console.log(typeof res1); // "string"
+
+let res2 = true + String(y)
+console.log(res2); // "true2"
+console.log(typeof res2); // "string"
+
+
+let res3 = x < y
+console.log(res3); // true
+console.log(typeof res3); // "boolean"
+
+
+let res4 = x / "string1"
+console.log(res4); // NaN
+console.log(typeof res4); // "number"
+
+//task4
+let mark = Number (prompt("enter your mark",""))
+
+if (mark >= 0 && mark <= 49)
+{
+alert ("Unsatisfied")
+}
+else if (mark >= 50 && mark <= 70)
+{
+    alert ("Satisfied") 
+}
+else if (mark >= 71 && mark <= 87)
+{
+    alert ("Good") 
+}
+else if (mark >= 88 && mark <= 100)
+{
+    alert ("Excellentd") 
+}
+
+else 
+{
+    alert ("Incorrect assessment!") 
+}
+
+let mark1 = Number (prompt("enter your mark",""))
+
+switch (mark1)
+{
+case mark1 >= 0 && mark1 <= 49:
+alert ("Unsatisfied");
+break;
+
+case mark1 >= 50 && mark1 <= 70:
+alert ("Satisfied");
+break;
+
+case mark1 >= 71 && mark1 <= 87:
+alert ("Good");
+break;
+
+case mark1 >= 88 && mark1 <= 100:
+alert ("Unsatisfiedd");
+break;
+
+default:
+alert("Incorrect assessment!");
+break;
+}
+
+//task 5
+for (let i = 1; i <= 50; i++) {
+    let message = i.toString();
+
+    if (i % 2 === 0 && i % 4 === 0) {
+        message += " kratne 2 & 4!"; 
+    } else if (i % 4 === 0) {
+        message += " kratne 4!"; 
+    } else if (i % 2 === 0) {
+        message += " kratne 2!"; 
+    }
+
+    console.log(message);
+}
+
+
+    </script>
+
+</body>
+</html>
