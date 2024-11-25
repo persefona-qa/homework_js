@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <fieldset>
+        <legend align="center">Новий користувач</legend>
+        <input value="Name" type="text" data-form="ПІБ" class="text-data arr" name="fio" placeholder="Введіть ПІБ">
+        <input value="+380-00-000-0000" type="phone" data-form="Номер телефону" class="arr" name="phone" placeholder="+380-00-000-0000">
+        <input value="2020-02-02" type="date" data-form="Дата народження" class="arr" name="birthday">
+        <input value="softserve@softserve.com" type="email" data-form="Електронна пошта" class="arr" placeholder="email@softserveinc.com" name="email">
+        <input type="submit" class="btn">
+    </fieldset>
+
+    <script>
+        const name = document.querySelector('input[name="fio"]').value;
+        const phoneNumber = document.querySelector('input[name="phone"]').value;
+        const dateOfBirth = document.querySelector('input[name="birthday"]').value;
+        const emailAddress = document.querySelector('input[name="email"]').value;
+
+        console.log("Name:", name);
+        console.log("Phone Number:", phoneNumber);
+        console.log("Date of Birth:", dateOfBirth);
+        console.log("Email Address:", emailAddress);
+    </script>
+
+    <section>
+        <h2 class="header">Header</h2>
+        <p id='data'>DOM - document object model </p>
+        <span>Span</span>
+        <div>Invisible element</div>
+    </section>
+    <button id="btn">Add style</button>
+
+    <script>
+        function addStyle() {
+            const h2 = document.getElementsByClassName('header')[0]
+            h2.style.color = 'red';
+            h2.style.textDecoration = 'underline';
+
+            const id = document.getElementById('data')
+            id.style.color = 'brown';
+            id.style.fontSize = '18px';
+            id.style.fontFamily = '"Comic Sans MS", cursive';
+
+            const span = document.querySelector('span')
+            span.style.color = 'green';
+            span.style.fontStyle = 'italic';
+
+            const div = document.querySelector('div')
+            div.style.display = 'none';
+        }
+
+        document.getElementById('btn').onclick = addStyle;
+    </script>
+
+    <button id="btn3">Live button</button>
+    <p id="message"></p>
+
+    <script>
+        function buttonActions() {
+            const button = document.getElementById('btn3');
+            const message = document.getElementById('message');
+
+            button.addEventListener('click', () => {
+                message.textContent = "I was pressed!";
+            });
+
+            button.addEventListener('mouseover', () => {
+                message.textContent = "Mouse on me!";
+            });
+
+            button.addEventListener('mouseout', () => {
+                message.textContent = "Mouse is not on me!";
+            });
+        }
+
+        buttonActions()
+    </script>
+
+    <script>
+        const article = document.createElement('article');
+        article.className = 'article postList';
+        
+        const container = document.createElement('div');
+        container.id = 'container';
+       
+        const posts = ['Post 1', 'Post 2', 'Post 3'];
+        posts.forEach(postText => {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = postText;
+            container.appendChild(paragraph); 
+        });
+        article.appendChild(container);
+        document.body.appendChild(article);
+    </script>
+
+</body>
+</html>
